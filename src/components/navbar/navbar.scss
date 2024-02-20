@@ -1,0 +1,31 @@
+.navbar {
+    height: 100px;
+
+    .container {
+        width: 100%;
+        max-width: 80%;
+        margin: auto;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+
+        .logo {
+            font-weight: bold;
+        }
+
+        .social-links {
+            display: flex;
+            align-items: baseline;
+            column-gap: 20px;
+
+            .social-icon {
+                .icon {
+                    width: 18px;
+                    height: 18px;
+                }
+            }
+        }
+    }
+}

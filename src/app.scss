@@ -1,0 +1,52 @@
+html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+/* For DM Sans */
+@font-face {
+    font-family: "DM Sans";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("../fonts/DM_Sans/DMSans-VariableFont_opsz,wght.ttf") format("ttf");
+}
+/* For Oswald */
+@font-face {
+    font-family: "Oswald";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("../fonts/Oswald/Oswald-VariableFont_wght.ttf") format("ttf");
+}
+/* For Roboto */
+@font-face {
+    font-family: "Roboto";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("../fonts/Robot") format("woff2"),
+        url("../fonts/Roboto/Roboto-Regular.woff") format("woff"),
+        url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "DM sans", sans-serif;
+}
+
+body {
+    background-color: #0c0c1d;
+    color: lightgray;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+section {
+    height: 100dvh;
+    scroll-snap-align: center;
+}
