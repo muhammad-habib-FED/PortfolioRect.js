@@ -6,7 +6,7 @@
 
     .container {
         width: 100%;
-        max-width: 80%;
+        max-width: 85%;
         height: 100%;
         margin: auto;
 
@@ -31,11 +31,11 @@
             .buttons-box {
                 display: flex;
                 align-items: center;
-                column-gap: 15px;
+                column-gap: clamp(7.5px, 1.042vw, 30px);
                 .button {
-                    padding: 20px;
-                    border: 1px solid white;
-                    border-radius: 10px;
+                    padding: clamp(10px, 1.389vw, 40px);
+                    border: clamp(1px, 0.069vw, 2px) solid white;
+                    border-radius: clamp(5px, 0.694vw, 20px);
                     background: transparent;
                     color: white;
                     cursor: pointer;

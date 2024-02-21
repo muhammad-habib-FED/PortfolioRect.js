@@ -1,29 +1,28 @@
 .navbar {
-    height: 100px;
+    height: clamp(100px, 6.944vw, 200px);
 
     .container {
         width: 100%;
-        max-width: 80%;
+        max-width: 85%;
         margin: auto;
-
         display: flex;
         align-items: center;
         justify-content: space-between;
         height: 100%;
-
         .logo {
             font-weight: bold;
+            font-size: clamp(18px, 2.5vw, 72px);
         }
 
         .social-links {
             display: flex;
             align-items: baseline;
-            column-gap: 20px;
+            column-gap: clamp(10px, 1.389vw, 40px);
 
             .social-icon {
                 .icon {
-                    width: 18px;
-                    height: 18px;
+                    width: clamp(18px, 1.25vw, 44px);
+                    height: clamp(18px, 1.25vw, 44px);
                 }
             }
         }
