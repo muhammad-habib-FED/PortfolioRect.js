@@ -6,13 +6,13 @@
     background-color: white;
     color: black;
     z-index: 9;
-
     .bg {
         position: fixed;
         top: 0;
         left: 0;
         bottom: 0;
-        width: 400px;
+        width: clamp(200px, 27.778vw, 600px);
+        height: 100%;
         background-color: white;
         z-index: 9;
 
@@ -24,10 +24,10 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            row-gap: 20px;
+            row-gap: clamp(10px, 1.389vw, 40px);
 
             a {
-                font-size: 40px;
+                font-size: clamp(24px, 2.778vw, 80px);
             }
         }
     }
