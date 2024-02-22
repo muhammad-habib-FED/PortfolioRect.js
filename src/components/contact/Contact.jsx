@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import "./contact.scss";
 import { motion, useInView } from "framer-motion";
 import emailjs from "@emailjs/browser";
@@ -24,8 +24,9 @@ const Contact = () => {
 
     const isInView = useInView(ref, { margin: "-100px" });
 
-    // const [error, setError] = useState(false);
-    // const [success, setSuccess] = useState(false);
+    const [error, setError] = useState(false);
+    const [success, setSuccess] = useState(false);
+    // const [message, setMessage] = useState("myNameIS");
 
     const sendEmail = (e) => {
         e.preventDefault();
@@ -132,7 +133,8 @@ const Contact = () => {
                         name="message"
                     />
                     <button className="submitBtn">Submit</button>
-                    {/* {error && (
+                    {/* <p>{message}</p> */}
+                    {error && (
                         <p style={{ color: "red" }}>
                             Error in sending message.
                         </p>
@@ -141,7 +143,7 @@ const Contact = () => {
                         <p style={{ color: "green" }}>
                             Message sent successfully!
                         </p>
-                    )} */}
+                    )}
                 </motion.form>
             </div>
         </motion.div>
