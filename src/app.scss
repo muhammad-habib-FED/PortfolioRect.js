@@ -36,6 +36,16 @@ html {
     font-family: "DM sans", sans-serif;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: lightgray;
+    background-color: transparent;
+    transition: background-color 5000s ease-in-out 0s; /* Optional visual effect */
+}
+
 body {
     background-color: #0c0c1d;
     color: lightgray;
@@ -49,4 +59,20 @@ a {
 section {
     // height: 100vh;
     scroll-snap-align: center;
+}
+
+@mixin mobile {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (max-width: 1024px) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media (max-width: 1366px) {
+        @content;
+    }
 }

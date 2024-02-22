@@ -1,9 +1,6 @@
 import { useRef } from "react";
 import "./parallax.scss";
 import { motion, useScroll, useTransform } from "framer-motion";
-import mountain from "../../../public/mountains.png";
-import planets from "../../../public/planets.png";
-import stars from "../../../public/stars.png";
 
 const Parallax = ({ type }) => {
     const ref = useRef();
