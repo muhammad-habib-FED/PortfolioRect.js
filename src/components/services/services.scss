@@ -1,3 +1,5 @@
+@import "../../app.scss";
+
 .servicesSection {
     background: linear-gradient(180deg, #0c0c1d, #111132);
     height: 100%;
@@ -13,17 +15,32 @@
         column-gap: clamp(10px, 1.389vw, 40px);
         padding-bottom: clamp(30px, 4.167vw, 120px);
 
+        @include mobile {
+            align-self: center;
+            text-align: center;
+            flex-direction: column;
+            width: 100%;
+        }
+
         .topText {
             font-weight: 200;
             font-size: clamp(18px, 1.389vw, 40px);
             color: gray;
             text-align: end;
+            @include mobile {
+                text-align: center;
+                width: 100%;
+                margin-bottom: 15px;
+            }
         }
 
         hr {
             width: 500px;
             border: none;
             border-top: 0.5px solid gray;
+            @include mobile {
+                width: 100%;
+            }
         }
     }
 
@@ -32,11 +49,19 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-bottom: clamp(30px, 4.167vw, 120px);
+        padding-bottom: clamp(40px, 4.167vw, 120px);
+        @include mobile {
+            width: 100%;
+        }
         .title {
             display: flex;
             align-items: center;
             column-gap: clamp(25px, 3.472vw, 100px);
+            @include mobile {
+                flex-direction: column;
+                text-align: center;
+                row-gap: clamp(15px, 2.083vw, 30px);
+            }
             img {
                 width: clamp(150px, 20.833vw, 600px);
                 height: clamp(50px, 6.944vw, 100px);
@@ -56,6 +81,14 @@
                 padding: 22px 50px;
                 border-radius: 50px;
                 cursor: pointer;
+                &:hover {
+                    background-color: #ffa600cc;
+                }
+                @include mobile {
+                    font-size: 16px;
+                    font-weight: 500;
+                    padding: 12px 40px;
+                }
             }
         }
     }
@@ -64,13 +97,21 @@
         display: flex;
         max-width: 80%;
         margin: auto;
+        @include mobile {
+            flex-direction: column;
+            width: 100%;
+            max-width: 90%;
+        }
 
         .card-box {
-            padding: 50px 30px;
+            padding: clamp(25px, 3.472vw, 50px) clamp(15px, 2.083vw, 30px);
             border: 0.5px solid gray;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            @include mobile {
+                border: none;
+            }
         }
 
         .heading {
@@ -85,7 +126,15 @@
             padding: 10px;
             background-color: orange;
             border: none;
+            border-radius: 10px;
             cursor: pointer;
+            &:hover {
+                background-color: #ffa600cc;
+            }
+            @include mobile {
+                width: 100%;
+                max-width: 50%;
+            }
         }
     }
 }

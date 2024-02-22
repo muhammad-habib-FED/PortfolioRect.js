@@ -1,3 +1,5 @@
+@import "../../app.scss";
+
 .portfolioSection {
     position: relative;
     .progress {
@@ -8,6 +10,9 @@
         text-align: center;
         color: orange;
         font-size: clamp(18px, 2.5vw, 72px);
+        @include mobile {
+            padding-top: calc(100vh - 100px);
+        }
 
         .progressBar {
             height: clamp(3px, 0.417vw, 12px);
@@ -32,13 +37,26 @@
             justify-content: center;
             column-gap: clamp(25px, 3.472vw, 100px);
             padding-top: clamp(30px, 4.167vw, 120px);
+            @include mobile {
+                max-width: 90%;
+                flex-direction: column;
+            }
+
             .imageContainer {
                 flex: 1;
                 height: 50%;
+                @include mobile {
+                    width: 100%;
+                    max-height: 300px;
+                }
                 img {
                     width: 100%;
                     height: clamp(280px, 24.306vw, 350px);
                     object-fit: cover;
+                    border-radius: 11px;
+                    @include mobile {
+                        object-fit: cover;
+                    }
                 }
             }
 
@@ -46,15 +64,24 @@
                 flex: 1;
                 display: flex;
                 flex-direction: column;
-                row-gap: clamp(12.5px, 1.736vw, 50px);
+                row-gap: clamp(25px, 1.736vw, 50px);
+                @include mobile {
+                    transform: none !important;
+                    padding: 10px;
+                    align-items: center;
+                    text-align: center;
+                }
 
                 h2 {
-                    font-size: clamp(24px, 3.333vw, 96px);
+                    font-size: clamp(36px, 3.333vw, 96px);
+                    line-height: 1.5;
                 }
 
                 p {
                     color: gray;
-                    font-size: clamp(16px, 1.389vw, 40px);
+                    font-size: clamp(20px, 1.389vw, 40px);
+                    line-height: 1.5;
+                    font-weight: 400;
                 }
 
                 button {
@@ -69,6 +96,9 @@
                     color: #000;
                     font-weight: 500;
                     cursor: pointer;
+                    &:hover {
+                        background-color: #ffa600cc;
+                    }
                 }
             }
         }

@@ -1,3 +1,5 @@
+@import "../../app.scss";
+
 .contactSection {
     width: 100%;
     max-width: 85%;
@@ -5,18 +7,29 @@
     margin: auto;
     display: flex;
     align-items: center;
-    column-gap: 50px;
+    column-gap: clamp(25px, 3.472vw, 80px);
     overflow: hidden;
+    @include mobile {
+        width: 100%;
+        flex-direction: column;
+        row-gap: clamp(25px, 2.431vw, 35px);
+        justify-content: center;
+    }
 
     .textContainer {
         flex: 1;
         display: flex;
         flex-direction: column;
-        row-gap: 40px;
+        row-gap: clamp(30px, 2.778vw, 80px);
+        width: 100%;
+        @include mobile {
+            justify-content: center;
+            flex: unset;
+        }
 
         h1 {
-            font-size: 100px;
-            line-height: 88px;
+            font-size: clamp(40px, 4.861vw, 140px);
+            line-height: 1.1;
         }
 
         span {
@@ -27,6 +40,11 @@
     .formContainer {
         flex: 1;
         position: relative;
+        width: 100%;
+        @include mobile {
+            width: 100%;
+            flex: unset;
+        }
 
         .phoneSvg {
             position: absolute;
@@ -42,18 +60,34 @@
             z-index: 1;
             .input {
                 padding: 20px;
-                background-color: transparent;
+                background-color: #0c0c1d;
                 border: 1px solid white;
                 color: white;
                 border-radius: 5px;
+                box-sizing: border-box;
+                -webkit-transition: 0.5s;
+                transition: 0.5s;
+                outline: none;
+            }
+            input[type="text"]:focus {
+                border: 1px solid orange;
+            }
+            input[type="email"]:focus {
+                border: 1px solid orange;
             }
 
             .textarea {
+                width: 100%;
                 padding: 20px;
-                background-color: transparent;
+                background-color: #0c0c1d;
                 border: 1px solid white;
                 color: white;
                 border-radius: 5px;
+
+                &:focus {
+                    border: 1px solid orange;
+                    outline: none;
+                }
             }
 
             .submitBtn {
