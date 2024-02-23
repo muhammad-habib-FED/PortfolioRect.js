@@ -14,6 +14,8 @@
         flex-direction: column;
         row-gap: clamp(25px, 2.431vw, 35px);
         justify-content: center;
+        height: auto;
+        padding-top: 60px;
     }
 
     .textContainer {
@@ -44,6 +46,7 @@
         @include mobile {
             width: 100%;
             flex: unset;
+            padding-bottom: 60px;
         }
 
         .phoneSvg {
@@ -51,6 +54,11 @@
             margin: auto;
             stroke: orange;
             z-index: -1;
+
+            svg {
+                width: clamp(225px, 31.25vw, 450px);
+                height: clamp(225px, 31.25vw, 450px);
+            }
         }
 
         .form {
@@ -91,13 +99,13 @@
             }
 
             .submitBtn {
-                padding: 18px;
+                padding: clamp(10px, 1.25vw, 36px);
                 border: none;
                 border-radius: 5px;
                 background-color: orange;
                 cursor: pointer;
                 font-weight: 500;
-                font-size: 20px;
+                font-size: clamp(18px, 1.389vw, 40px);
             }
         }
     }
