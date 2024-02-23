@@ -38,20 +38,35 @@ const Single = ({ item }) => {
     });
 
     const y = useTransform(scrollYProgress, [0, 1], [-350, 300]);
+
+    const isMobile = window.innerWidth <= 768;
     return (
         <section>
-            <div className="container">
-                <div className="contentWrapper">
-                    <div className="imageContainer" ref={ref}>
+            {isMobile ? (
+                <div className="mobileCard">
+                    <div className="imageContainer">
                         <img src={item.img} alt="" />
                     </div>
-                    <motion.div className="textContainer" style={{ y }}>
+                    <div className="textContainer">
                         <h2>{item.title}</h2>
                         <p>{item.desc}</p>
                         <button>See Demo</button>
-                    </motion.div>
+                    </div>
                 </div>
-            </div>
+            ) : (
+                <div className="container">
+                    <div className="contentWrapper">
+                        <div className="imageContainer" ref={ref}>
+                            <img src={item.img} alt="" />
+                        </div>
+                        <motion.div className="textContainer" style={{ y }}>
+                            <h2>{item.title}</h2>
+                            <p>{item.desc}</p>
+                            <button>See Demo</button>
+                        </motion.div>
+                    </div>
+                </div>
+            )}
         </section>
     );
 };
